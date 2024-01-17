@@ -13,10 +13,10 @@ Pod::Spec.new do |s|
 
   s.description      = 'Monri iOS SDK - simplified card collection & payment'
 
-  s.homepage         = 'https://github.com/MonriPayments/monri-ios'
+  s.homepage         = 'https://github.com/BrickTechnology/monri-ios'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'monri' => 'support@monri.com' }
-  s.source           = { :git => 'https://github.com/MonriPayments/monri-ios.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/BrickTechnology/monri-ios.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '10.0'
   s.swift_version = '4.2'

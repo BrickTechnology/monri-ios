@@ -48,7 +48,7 @@ public final class MonriApi {
             return
         }
 
-        Alamofire.request(tokenizeUrl, method: .post, parameters: createTokenRequest.toJson(), encoding: JSONEncoding.default)
+        AF.request(tokenizeUrl, method: .post, parameters: createTokenRequest.toJson(), encoding: JSONEncoding.default)
                 .responseJSON { dataResponse in
                     guard let data = dataResponse.data else {
                         callback(.error(TokenError.tokenizationFailed))

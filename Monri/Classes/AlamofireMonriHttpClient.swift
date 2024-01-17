@@ -8,29 +8,30 @@ import Alamofire
 class AlamofireMonriHttpClient: MonriHttpClient {
 
     func jsonPost(url: String, body: [String: Any], headers: [String: String], _ callback: @escaping (MonriHttpClientResponse) -> Void) {
-        Alamofire.request(url,
+        AF.request(url,
                         method: .post,
                         parameters: body,
                         encoding: JSONEncoding.default,
-                        headers: headers
+                        headers: HTTPHeaders(headers)
                 )
                 .responseJSON { dataResponse in
                     self.handleResponse(dataResponse, callback)
                 }
     }
+
 
     func jsonGet(url: String, headers: [String: String], _ callback: @escaping (MonriHttpClientResponse) -> Void) {
-        Alamofire.request(url,
+        AF.request(url,
                         method: .get,
                         encoding: JSONEncoding.default,
-                        headers: headers
+                        headers: HTTPHeaders(headers)
                 )
                 .responseJSON { dataResponse in
                     self.handleResponse(dataResponse, callback)
                 }
     }
 
-    func handleResponse(_ dataResponse: DataResponse<Any>, _ callback: @escaping (MonriHttpClientResponse) -> Void) {
+    func handleResponse(_ dataResponse: AFDataResponse<Any>, _ callback: @escaping (MonriHttpClientResponse) -> Void) {
         do {
             let statusCode = dataResponse.response!.statusCode
 
