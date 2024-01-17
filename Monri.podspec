@@ -20,13 +20,13 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '10.0'
   s.swift_version = '4.2'
-  
+
   s.resource_bundles = {
       'Monri' => ['Monri/Classes/**/*.{storyboard,xib,xcassets,json,imageset,png}']
   }
 
   s.source_files = 'Monri/Classes/**/*'
-  
+
   s.dependency 'Caishen'
-  s.dependency 'Alamofire', '~> 4.0'
+  s.dependency 'Alamofire', '~> 5.0'
 end
